@@ -1,0 +1,19 @@
+<div class="panel panel-default" ng-init="getOrders()">
+    <div class="panel-heading">
+      <h3 class="panel-title">Orders</h3>
+    </div>
+<div class="panel-body">
+    <div class="row">
+        <div ng-repeat="order in orders">
+            <div class="col-md-12">
+                <div class="div">
+                    User: {{order.user}}
+                    Product: {{order.product}}
+                    Quantity: {{order.quantity}}
+                    Created: {{order.createdOn | date}}
+                </div>
+            </div>	
+        </div>
+    </div>
+</div>
+</div>

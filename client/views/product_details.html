@@ -1,0 +1,48 @@
+<a href="#!/products">Go back</a>
+<div class="panel panel-default" ng-init="getProduct()" ng-submit="makeOrder(product._id, '59a01041f36d281bbd02a7ed', 1)">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{product.title}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img ng-src="{{ product.url }}">
+            </div>
+            <div class="col-md-8">
+                <p>Product type: {{product.type}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Price: {{ product.price }} €</li>
+                    <li class="list-group-item">Quantity in shop: {{ product.quantity }}</li>
+                </ul>
+                <div class="form-group col-xs-3">
+                    <div class="form-group">
+                        Order quantity:
+                        <select class="form-control" ng-model="$ctrl.orderQuantity" ng-init="$ctrl.orderQuantity='1'">'
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-xs-3">
+                    <br>
+                    <button type="submit" 
+                    ng-click="makeOrder(product._id, $ctrl.orderQuantity, '59a01041f36d281bbd02a7ed')" 
+                    class="btn btn-success">Buy</button>
+                </div>
+                <div class="form-group col-xs-6">
+                    <div ng-show="err != null" class="alert alert-danger" role="alert">
+                            <strong><a href="#" class="alert-link">{{err}}</strong> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pull-right">
+    <a href="#!/products/edit/{{ product._id }}">Edit</a> | 
+    <a href="#!" ng-click="removeProduct(product._id)">Delete</a>
+</div>

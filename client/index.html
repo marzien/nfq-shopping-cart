@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+<head>
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <nav class="navbar navbar-default">
+          <a class="navbar-brand" href="#">NFQ Shopping cart</a>
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                  <a href="#!/orders">Orders</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="/app.js"></script>
+    <script src="/controllers/products.js"></script>
+    <script src="/controllers/orders.js"></script>
+</body>
+</html>

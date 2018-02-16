@@ -1,0 +1,22 @@
+var myApp = angular.module('myApp')
+
+myApp.controller('ProductsController', ['$scope', '$http', '$location', '$routeParams',
+	function ($scope, $http, $location, $routeParams) {
+
+		$scope.getProducts = function () {
+			$http.get('/products').then(function (response) {
+				$scope.products = response.data
+			})
+		}
+
+		$scope.getProduct = function () {
+			let id = $routeParams.id
+			$http.get('/product/'+id).then(function (response) {
+				$scope.product = response.data
+			})
+		}
+	}
+])
+
+
+	

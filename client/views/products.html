@@ -1,0 +1,38 @@
+<div class="panel panel-default" ng-init="getProducts()">
+        <div class="panel-heading">
+					<!-- <h3 class="panel-title">Products</h3> -->
+					<label>Search by product name:</label> 
+						<input class="form-control" type="text" ng-model="filter_product">
+					<label>Sort by category:</label>
+						<select class="form-control" ng-model="filter_category">
+							<option></option>
+							<option>furniture</option>
+							<option>clothes</option>
+							<option>food</option>
+						</select>
+				</div>
+    <div class="panel-body">
+		<div class="row">
+			<div dir-paginate="product in products
+										| filter: filter_product
+										| filter: filter_category
+										| itemsPerPage: 4">
+				<div class="col-md-6">
+					<div class="col-md-6">
+						<h4>{{product.title}}</h4>
+						<p>Quantity: {{product.quantity}}</p>
+						<p>Price: {{product.price}} €</p>
+						<a class="btn btn-primary" 
+							href="#!/products/details/{{product._id}}">View details</a>
+					</div>
+					<div class="col-md-6">
+						<img class="thumbnail" ng-src="{{ product.url }}">	
+					</div>
+				</div>
+			</div>
+			<dir-pagination-controls
+				[auto-hide="true"]
+			></dir-pagination-controls>
+		</div>
+	</div>
+</div>
