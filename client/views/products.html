@@ -15,7 +15,7 @@
 			<div dir-paginate="product in products
 										| filter: filter_product
 										| filter: filter_category
-										| itemsPerPage: 4">
+										| itemsPerPage: 6">
 				<div class="col-md-6">
 					<div class="col-md-6">
 						<h4>{{product.title}}</h4>
@@ -28,7 +28,7 @@
 					</div>
 				</div>
 			</div>
-			<dir-pagination-controls [auto-hide="true" ]></dir-pagination-controls>
 		</div>
+		<dir-pagination-controls [auto-hide="true"]></dir-pagination-controls>
 	</div>
 </div>
