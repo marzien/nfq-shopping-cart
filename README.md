@@ -1,3 +1,3 @@
-# Task for NFQ academy spring semmester
+# Task for NFQ academy spring semester
 
 Main frontend functionality
