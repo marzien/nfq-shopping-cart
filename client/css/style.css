@@ -8,3 +8,9 @@ img{width:100%}
 th {
     cursor:pointer;
 }
+
+dir-pagination-controls {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
