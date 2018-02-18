@@ -16,10 +16,10 @@
             <table ng-table="tableParams" class="table table-striped table-responsive" show-filter="true">
                 <thead>
                     <tr>
-                        <th ng-click="sort('username')">Username
+                        <th ng-click="sort('userData.firstName')">Username
                             <span class="glyphicon sort-icon" ng-show="sortKey=='username'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                         </th>
-                        <th ng-click="sort('product')">Product title
+                        <th ng-click="sort('productData.title')">Product title
                             <span class="glyphicon sort-icon" ng-show="sortKey=='product'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                         </th>
                         <th ng-click="sort('quantity')">Quantity
@@ -32,8 +32,8 @@
                 </thead>
                 <tbody>
                     <tr dir-paginate="order in data | orderBy:sortKey:reverse | filter:search | itemsPerPage:10">
-                        <td>{{order.user}}</td>
-                        <td>{{order.product}}</td>
+                        <td>{{order.userData.firstName}}</td>
+                        <td>{{order.productData.title}}</td>
                         <td>{{order.quantity}}</td>
                         <td>{{order.createdOn | date}}</td>
                     </tr>

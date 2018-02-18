@@ -13,4 +13,26 @@ router.get('/orders', (req, res, next) => {
 		.catch((err) => { next(new ExtendedError('Can\'t get oders ', 500, err)) })
 })
 
+router.get('/usersByOrders', (req, res, next) => {
+	User.find(
+		{ '_id': { $in: req.query.user_ids }}
+	)
+		.exec()
+		.then((orders) => { res.json(orders) })
+		.catch((err) => {
+			next(new ExtendedError('Can\'t get oders by orders', 500, err))
+		})
+})
+
+router.get('/productsByOrders', (req, res, next) => {
+	Product.find(
+		{ '_id': { $in: req.query.product_ids }}
+	)
+		.exec()
+		.then((orders) => { res.json(orders) })
+		.catch((err) => {
+			next(new ExtendedError('Can\'t get products by orders ', 500, err))
+		})
+})
+
 module.exports = router
