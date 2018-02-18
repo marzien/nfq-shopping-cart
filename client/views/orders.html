@@ -1,12 +1,15 @@
-<div class="panel panel-default" ng-init="getOrders()">
+<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Orders</h3>
     </div>
     <div class="panel-body">
         <form class="form-inline">
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label>Search</label>
                 <input type="text" ng-model="search" class="form-control" placeholder="by username or product">
+            </div>
+            <div class="col-md-6">
+                <label style="color:red;">Push table titles to sort</label>
             </div>
         </form>
         <div class="row">
