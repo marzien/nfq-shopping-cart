@@ -1,14 +1,20 @@
 <div class="panel panel-default" ng-init="getProducts()">
 	<div class="panel-heading">
-		<label>Search by product name:</label>
-		<input class="form-control" type="text" ng-model="filter_product">
-		<label>Sort by category:</label>
-		<select class="form-control" ng-model="filter_category">
-			<option></option>
-			<option>furniture</option>
-			<option>clothes</option>
-			<option>food</option>
-		</select>
+		<div class="row">
+			<div class="col-xs-6">
+				<label>Search by product name:</label>
+				<input class="form-control" type="text" ng-model="filter_product">
+			</div>
+			<div class="col-xs-6">
+				<label>Sort by category:</label>
+				<select class="form-control" ng-model="filter_category">
+					<option></option>
+					<option>furniture</option>
+					<option>clothes</option>
+					<option>food</option>
+				</select>
+			</div>
+		</div>
 	</div>
 	<div class="panel-body">
 		<div class="row">
