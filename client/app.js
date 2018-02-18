@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination'])
+var myApp = angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'ngTable'])
 
 myApp.config(function ($routeProvider) {
 	$routeProvider
@@ -13,10 +13,6 @@ myApp.config(function ($routeProvider) {
 		.when('/products/details/:id', {
 			controller: 'ProductsController',
 			templateUrl: 'views/product_details.html',
-		})
-		.when('/orders/details/:id', {
-			controller: 'OrdersController',
-			templateUrl: 'views/orders.html',
 		})
 		.when('/orders', {
 			controller: 'OrdersController',
