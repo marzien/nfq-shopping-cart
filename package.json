@@ -15,7 +15,7 @@
     "mongoose": "4.11.12"
   },
   "engines": {
-    "node": "6.11.12"
+    "node": "8.9.4"
   },
   "devDependencies": {
     "eslint": "^4.7.1"
