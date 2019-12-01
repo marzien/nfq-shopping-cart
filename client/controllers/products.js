@@ -15,6 +15,22 @@ myApp.controller('ProductsController', ['$scope', '$http', '$location', '$routeP
 				$scope.product = response.data
 			})
 		}
+		$scope.makeOrder = function (productID, orderQuant, userID) {
+			let data = {
+				product: productID,
+				quantity: orderQuant,
+				user: userID, 
+			}
+			let config = {
+				headers: {'Content-Type': 'application/json'}
+            }
+
+			$http.post('/order', data, config)
+				.then(function (response) {
+					console.log(response)
+				.catch(e => console.error(e));
+			})
+		}
 	}
 ])
 
