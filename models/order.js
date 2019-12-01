@@ -9,3 +9,13 @@ let orderSchema = new Schema({
 })
 
 let Order = module.exports = mongoose.model('Order', orderSchema)
+
+// Create oder
+module.exports.createOrder = function(userID, productID, quantity, callback) {
+    order = {
+        "user": userID,
+        "product": productID,
+        "quantity": quantity
+    };
+    Order.create(order, callback);
+};

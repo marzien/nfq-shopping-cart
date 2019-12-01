@@ -11,3 +11,28 @@ let productSchema = new Schema({
 
 let Product = module.exports = mongoose.model('Product', productSchema)
 
+//-----------------------------------------------------------------------
+//Promise to get product data for order
+module.exports.getProductData = (id, callback) => {
+    return new Promise ((resolve, reject) => {
+        Product.findById(id, ['quantity', 'price'], (err, product) => {
+            if(err) {
+                console.log('Error: can\'t get product quantity and price ' + err.message);
+            }
+            else{
+                let productQuant = product.quantity;
+                let productPrice = product.price;
+                resolve([productQuant, productPrice]);
+            }
+        })
+    })
+};
+
+// Update Product Quantity
+module.exports.updateProductQuantity = function(id, newQuantity, options, callback) {
+    let query = {_id: id};
+    let update = {
+        quantity: newQuantity
+    };
+    Product.findOneAndUpdate(query, update, options, callback);
+};

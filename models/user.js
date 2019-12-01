@@ -10,3 +10,30 @@ let userSchema = new Schema({
 })
 
 let User = module.exports = mongoose.model('User', userSchema)
+
+//----------------------------------------------------------------------------------------
+//Promise for getUserMoney
+module.exports.getUserMoney = (id, callback) => {
+    return new Promise ((resolve, reject) => {
+        User.findById(id, 'money', (err, user) => {
+            if(err){
+                console.log('Error: can\'t get user money. ' + err.message);
+            }
+            else{
+                var userMoney = user.money;
+                //res.json(userMoney);
+                resolve(userMoney);
+            }
+        })
+    })
+};
+
+// Deduct User Money
+module.exports.deductUserMoney = function(id, newMoney, options, callback) {
+    let query = {_id: id};
+    let update = {
+        money: newMoney
+    };
+    //console.log(update);
+    User.findOneAndUpdate(query, update, options, callback);
+};
