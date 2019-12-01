@@ -9,6 +9,5 @@ let productSchema = new Schema({
 	price: { type: Number, required: true },
 })
 
-module.exports = mongoose.model('Product', productSchema)
-
+let Product = module.exports = mongoose.model('Product', productSchema)
 

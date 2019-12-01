@@ -9,4 +9,4 @@ let userSchema = new Schema({
 	money: { type: Number, required: true },
 })
 
-module.exports = mongoose.model('User', userSchema)
+let User = module.exports = mongoose.model('User', userSchema)

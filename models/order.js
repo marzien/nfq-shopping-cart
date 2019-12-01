@@ -8,4 +8,4 @@ let orderSchema = new Schema({
 	createdOn: { type: Date, default: Date.now },
 })
 
-module.exports = mongoose.model('Order', orderSchema)
+let Order = module.exports = mongoose.model('Order', orderSchema)
