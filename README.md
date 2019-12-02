@@ -2,4 +2,4 @@
 
 Main frontend functionality
 
-Link: https://nfq-academy-shopping-cart.herokuapp.com
+Link: https://nfq-shopping-cart.herokuapp.com
