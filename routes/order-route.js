@@ -53,9 +53,15 @@ router.post('/order', function(req, res){
         console.log('Order quantity ', orderQuant);
         // checking conditions
         if (orderQuant > productQuant) {
-            console.log('Not enough product quantity in shop');
+			console.log('Not enough product quantity in shop');
+			return res.status(400).send({
+				message: 'Not enough product quantity in shop!'
+			 });
         } else if (userMoney < productPrice * orderQuant) {
-            console.log('Not enough users money for purchase');
+			console.log('Not enough users money for purchase');
+			return res.status(400).send({
+				message: 'Not enough users money for purchase!'
+			 });
         } else {
             // create Order record
             Order.createOrder(userID, productID, orderQuant, function(err, user){

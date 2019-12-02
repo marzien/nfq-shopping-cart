@@ -25,11 +25,15 @@ myApp.controller('ProductsController', ['$scope', '$http', '$location', '$routeP
 				headers: {'Content-Type': 'application/json'}
             }
 
-			$http.post('/order', data, config)
-				.then(function (response) {
-					console.log(response)
-				.catch(e => console.error(e));
-			})
+			$http.post('/order', data, config).then(function (response) {
+					if (response.data) {
+						$scope.msg = "Order Submitted Successfully!";
+					}
+				})
+				.catch(err => {
+					$scope.msg = err.data.message;
+					console.log('Error: can\'t sent order request. ' + err.data.message);
+				});
 		}
 	}
 ])
