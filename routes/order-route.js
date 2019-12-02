@@ -47,10 +47,6 @@ router.post('/order', function(req, res){
         let userMoney = values[0];
         let productQuant = values[1][0];
         let productPrice = values[1][1];
-        console.log('User money: ', userMoney);
-        console.log('Product quant in shop: ', productQuant);
-        console.log('Product price: ', productPrice);
-        console.log('Order quantity ', orderQuant);
         // checking conditions
         if (orderQuant > productQuant) {
 			console.log('Not enough product quantity in shop');
